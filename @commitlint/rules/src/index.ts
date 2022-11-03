@@ -33,6 +33,7 @@ import {typeEmpty} from './type-empty';
 import {typeEnum} from './type-enum';
 import {typeMaxLength} from './type-max-length';
 import {typeMinLength} from './type-min-length';
+import {rawNull} from './raw-null';
 
 export default {
 	'body-case': bodyCase,
@@ -70,4 +71,5 @@ export default {
 	'type-enum': typeEnum,
 	'type-max-length': typeMaxLength,
 	'type-min-length': typeMinLength,
+	'raw-null': rawNull
 };

@@ -117,3 +117,30 @@ jobs:
         run: yarn build
       - name: Test
         run: yarn test-ci
+
+  windows:
+    runs-on: windows-2022
+    needs: checkout_code
+
+    steps:
+      - name: Get repository's content
+        uses: actions/download-artifact@v3
+        with:
+          name: repo
+      - uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: v1-dependencies-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            v1-dependencies-${{ hashFiles('**/yarn.lock') }}
+            v1-dependencies-
+      - name: Update yarn
+        run: |
+          node -v
+          yarn global add yarn@latest
+      - name: Install dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+      - name: Build packages
+        run: yarn build
+      - name: Test
+        run: yarn test-ci

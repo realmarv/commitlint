@@ -54,6 +54,14 @@ test('returns object with expected keys', async () => {
 	expect(actual).toMatchObject(expected);
 });
 
+test('returns body with reference', async () => {
+	const message = "foo: this is only a title" + "\n\n" + "Bla blah bla #123.";
+	const actual = await parse(message);
+
+	console.log("body: ", actual.body)
+	expect(actual.body).toEqual("Bla blah bla #123.")
+});
+
 test('uses angular grammar', async () => {
 	const message = 'type(scope): subject';
 	const actual = await parse(message);

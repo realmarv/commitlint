@@ -13,6 +13,7 @@ export default async function parse(
 		...defaultOpts,
 		...(parserOpts || {}),
 	};
+	opts.fieldPattern = '';
 	const parsed = parser(message, opts) as Commit;
 	parsed.raw = message;
 	return parsed;

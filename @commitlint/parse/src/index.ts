@@ -15,6 +15,7 @@ export default async function parse(
 	};
 	// opts.fieldPattern = '';
 	console.log('==opts==>'+opts+'<==opts==')
+	console.log('==fieldPattern==>'+opts.fieldPattern+'<==fieldPattern==')
 	const parsed = parser(message, opts) as Commit;
 	parsed.raw = message;
 	return parsed;

@@ -154,6 +154,17 @@ test('ignores comments', async () => {
 	expect(actual.subject).toBe('subject');
 });
 
+test('keep -side notes- in the body section', async () => {
+	const message = 
+		'My commit message\n' +
+		'-hash-\n' +
+		'9b1aff905b638aa274a5fc8f88662df446d374bd';
+
+	const actual = await parse(message);
+
+	expect(actual.body).toBe('-hash-\n' + '9b1aff905b638aa274a5fc8f88662df446d374bd');
+});
+
 test('registers inline #', async () => {
 	const message =
 		'type(some/scope): subject #reference\n# some comment\nthings #reference';

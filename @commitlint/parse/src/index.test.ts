@@ -156,7 +156,7 @@ test('ignores comments', async () => {
 
 test('keep -side notes- in the body section', async () => {
 	const message = 
-		'My commit message\n' +
+		'type(some/scope): subject\n' +
 		'-hash-\n' +
 		'9b1aff905b638aa274a5fc8f88662df446d374bd';
 

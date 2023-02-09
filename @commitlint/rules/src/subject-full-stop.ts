@@ -6,7 +6,7 @@ export const subjectFullStop: SyncRule<string> = (
 	when = 'always',
 	value = '.'
 ) => {
-	const input = parsed.subject;
+	const input = parsed.header;
 
 	if (!input) {
 		return [true];

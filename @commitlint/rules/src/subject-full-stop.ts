@@ -7,6 +7,9 @@ export const subjectFullStop: SyncRule<string> = (
 	value = '.'
 ) => {
 
+	console.log('subject:' + parsed.subject)
+	console.log('header:' + parsed.header)
+
 	if (!parsed.subject) {
 		return [true];
 	}

@@ -49,7 +49,7 @@ test('without against "never ." should succeed', async () => {
 	expect(actual).toEqual(expected);
 });
 
-test('commit message title with full-stop against "never ." should fail', async () => {
+test('commit message title with slash before colon and full-stop against "never ." should fail', async () => {
 	let commitMessageWithSlashBeforeColon = 'type/scope: subject.'
 	const [actual] = subjectFullStop(await parse(commitMessageWithSlashBeforeColon), 'never', '.');
 	const expected = false;

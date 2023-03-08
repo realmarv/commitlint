@@ -94,6 +94,9 @@ jobs:
       - image: node:18-buster
     steps:
       - run-tests
+      - run:
+          name: ls @commitlint/test
+          command: ls @commitlint/test
   windows:
     executor:
       name: win/default

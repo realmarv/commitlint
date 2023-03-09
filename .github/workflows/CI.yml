@@ -19,10 +19,11 @@ jobs:
     container:
       image: "node:18-buster"
     steps:
-      - name: Install sudo
+      - name: Install sudo & git
         run: |
           apt update
-          apt install -y sudo
+          apt install -y sudo 
+          sudo apt install -y git
       # workaround for https://github.com/actions/runner/issues/2033
       - name: ownership workaround
         run: git config --global --add safe.directory '*'

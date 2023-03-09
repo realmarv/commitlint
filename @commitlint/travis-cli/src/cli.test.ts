@@ -58,18 +58,12 @@ test('should throw when on travis ci, but env vars are missing', async () => {
 });
 
 test('should call git with expected args', async () => {
-	const cwd = await git.clone(
-		'https://github.com/conventional-changelog/commitlint.git',
-		['--depth=10'],
-		__dirname,
-		TRAVIS_COMMITLINT_GIT_BIN
-	);
-
-	const result = await cli({
-		cwd,
-		env: validBaseEnv,
-	});
+	const cwd = await git.clone('https://github.com/conventional-changelog/commitlint.git', ['--depth=10'], __dirname,TRAVIS_COMMITLINT_GIT_BIN);
+	console.log("cwd:"+cwd);
+	const result = await cli({cwd,env: validBaseEnv,});
+	console.log("result:"+result)
 	const invocations = await getInvocations(result.stdout);
+	console.log("invocations:"+invocations)
 	expect(invocations.length).toBe(3);
 
 	const [stash, branches, commilint] = invocations;

@@ -95,11 +95,11 @@ jobs:
     steps:
       - run-tests
       - run:
-          name: ls @commitlint/test
+          name: ls
           command: |
             pwd
             ls
-            ls @commitlint/test
+
   windows:
     executor:
       name: win/default

@@ -64,12 +64,14 @@ test('should call git with expected args', async () => {
 		__dirname,
 		TRAVIS_COMMITLINT_GIT_BIN
 	);
-
+	console.log("cwd:"+cwd);
 	const result = await cli({
 		cwd,
 		env: validBaseEnv,
 	});
+	console.log("result:"+result)
 	const invocations = await getInvocations(result.stdout);
+	console.log("invocations:"+invocations)
 	expect(invocations.length).toBe(3);
 
 	const [stash, branches, commilint] = invocations;

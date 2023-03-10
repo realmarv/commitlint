@@ -59,6 +59,8 @@ test('should throw when on travis ci, but env vars are missing', async () => {
 
 test('should call git with expected args', async () => {
 	console.log("here")
+	console.log("git:" + git)
+	console.log("git.clone:" + git.clone)
 	const cwd = await git.clone(
 		'https://github.com/conventional-changelog/commitlint.git',
 		['--depth=10'],

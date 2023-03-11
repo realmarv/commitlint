@@ -1,3 +1,4 @@
+name: CI
 
 on: [push, pull_request]
 
@@ -10,14 +11,14 @@ jobs:
       - name: Install sudo
         run: |
           apt update
-          apt install -y sudo
+          apt install --yes sudo
       # workaround for https://github.com/actions/runner/issues/2033
       - name: ownership workaround
         run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v2
       - name: Update yarn
         run: |
-          node -v
+          node --version
           yarn global add yarn@latest
       - name: Install dependencies
         run: yarn install --ignore-engines --frozen-lockfile
@@ -34,14 +35,14 @@ jobs:
       - name: Install sudo
         run: |
           apt update
-          apt install -y sudo
+          apt install --yes sudo
       # workaround for https://github.com/actions/runner/issues/2033
       - name: ownership workaround
         run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v2
       - name: Update yarn
         run: |
-          node -v
+          node --version
           yarn global add yarn@latest
       - name: Install dependencies
         run: yarn install --ignore-engines --frozen-lockfile
@@ -58,14 +59,14 @@ jobs:
       - name: Install sudo
         run: |
           apt update
-          apt install -y sudo
+          apt install --yes sudo
       # workaround for https://github.com/actions/runner/issues/2033
       - name: ownership workaround
         run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v2
       - name: Update yarn
         run: |
-          node -v
+          node --version
           yarn global add yarn@latest
       - name: Install dependencies
         run: yarn install --ignore-engines --frozen-lockfile
@@ -80,7 +81,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Update yarn
         run: |
-          node -v
+          node --version
           yarn global add yarn@latest
       - name: Install dependencies
         run: yarn install --ignore-engines --frozen-lockfile

@@ -8,12 +8,11 @@ jobs:
     container:
       image: "ubuntu:22.04"
     steps:
-      - name: Install sudo
+      - name: Install required dependencies
         run: |
           apt update
           apt install --yes sudo
-      - name: Install node
-        run: |
+          sudo apt install --yes git
           sudo apt install --yes curl
           # can't install ubuntu's default nodejs version because we would get this error:
           # error @jest/core@29.4.1: The engine "node" is incompatible with this module. Expected version "^14.15.0 || ^16.10.0 || >=18.0.0". Got "12.22.9"
@@ -39,12 +38,11 @@ jobs:
     container:
       image: "ubuntu:22.04"
     steps:
-      - name: Install sudo
+      - name: Install required dependencies
         run: |
           apt update
           apt install --yes sudo
-      - name: Install node
-        run: |
+          sudo apt install --yes git
           sudo apt install --yes curl
           # can't install ubuntu's default nodejs version because we would get this error:
           # error @jest/core@29.4.1: The engine "node" is incompatible with this module. Expected version "^14.15.0 || ^16.10.0 || >=18.0.0". Got "12.22.9"
@@ -70,12 +68,11 @@ jobs:
     container:
       image: "ubuntu:22.04"
     steps:
-      - name: Install sudo
+      - name: Install required dependencies
         run: |
           apt update
           apt install --yes sudo
-      - name: Install node
-        run: |
+          sudo apt install --yes git
           sudo apt install --yes curl
           # can't install ubuntu's default nodejs version because we would get this error:
           # error @jest/core@29.4.1: The engine "node" is incompatible with this module. Expected version "^14.15.0 || ^16.10.0 || >=18.0.0". Got "12.22.9"

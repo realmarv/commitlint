@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   v14:
     runs-on: ubuntu-22.04
+    container:
+      image: "ubuntu:22.04"
     steps:
       - name: Install sudo
         run: |
@@ -34,6 +36,8 @@ jobs:
 
   v16:
     runs-on: ubuntu-22.04
+    container:
+      image: "ubuntu:22.04"
     steps:
       - name: Install sudo
         run: |
@@ -63,6 +67,8 @@ jobs:
 
   v18:
     runs-on: ubuntu-22.04
+    container:
+      image: "ubuntu:22.04"
     steps:
       - name: Install sudo
         run: |

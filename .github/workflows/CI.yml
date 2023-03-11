@@ -22,8 +22,9 @@ jobs:
       - name: ownership workaround
         run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v2
-      - name: Update yarn
+      - name: Install yarn
         run: |
+          npm install -g yarn
           node --version
           yarn global add yarn@latest
       - name: Install dependencies
@@ -52,8 +53,9 @@ jobs:
       - name: ownership workaround
         run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v2
-      - name: Update yarn
+      - name: Install yarn
         run: |
+          npm install -g yarn
           node --version
           yarn global add yarn@latest
       - name: Install dependencies
@@ -82,8 +84,9 @@ jobs:
       - name: ownership workaround
         run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v2
-      - name: Update yarn
+      - name: Install yarn
         run: |
+          npm install -g yarn
           node --version
           yarn global add yarn@latest
       - name: Install dependencies

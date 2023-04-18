@@ -12,7 +12,7 @@ export default async function parse(
 	const opts = {
 		...defaultOpts,
 		fieldPattern: null,
-		headerPattern: /^(\w*)(?:\((.*)\))?: (.*)|(\w*)(?:\((.*)\))$/,
+		headerPattern: /^(\w*)(?:\((.*)\)(?::)?|:)\s*(.*)$/,
 		...(parserOpts || {}),
 	};
 	const parsed = parser(message, opts) as Commit;

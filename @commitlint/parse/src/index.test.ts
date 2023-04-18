@@ -269,3 +269,24 @@ test('does not work with chinese scopes with incompatible pattern', async () => 
 	expect(actual.subject).toBe(null);
 	expect(actual.scope).toBe(null);
 });
+
+test('parses header when there is no subject in the title', async () => {
+	const message = 'foo(bar)';
+	const actual = await parse(message);
+	const expected = {
+		body: null,
+		footer: null,
+		header: 'foo(bar)',
+		mentions: [],
+		merge: null,
+		notes: [],
+		raw: 'foo(bar)',
+		references: [],
+		revert: null,
+		scope: 'bar',
+		subject: null,
+		type: 'foo',
+	};
+
+	expect(actual).toMatchObject(expected);
+});
